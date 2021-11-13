@@ -1,0 +1,64 @@
+<!doctype html>
+<html pt-BR>
+<head>
+    <title> Sistema Simulador de Consórcio </title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sistema para simular consórcio de acordo com objetivo e condição do usuário">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/javascript"; src="/desktop/SistemaConsorcio/Funcoes/funcoes_sistema.js">
+    <style>
+            div{
+                background-color: white;
+                border-radius: 14px; 
+                box-shadow: rgb(186, 187, 187), 14px, ;
+            }
+            h1 {
+                color:black
+            }
+            h2{
+                color:black
+            }
+            h3{
+                color:black
+            }
+            p{
+                color:rgb(53, 53, 53)
+            } 
+
+            #area-simulador{
+                display:flex;
+                flex-flow:column;
+                justify-content: space-around;
+            }
+    </style>
+</head>
+    <body>
+        <h1>Sistema Simulador de Consórcio</h1>
+            <div id="area-simulador">
+                <h3>Simulação:</h3>
+                <select id="tipo-credito">
+                    <option value="1"><b>Carro</b></option>
+                    <option value="2"><b>Moto</b></option>
+                    <option value="3"><b>Imóvel</b></option>
+                </select>
+                
+                <input id="valor-credito">Quanto de crédito?</input>
+            
+                <input id="prazo">Qual prazo ideal?</input>                  
+            </div>
+         </div>
+
+         <div>
+             <button id="submit"> 
+                 Calcular
+             </button>
+         </div>
+
+         <div id="retorno">
+
+         </div>
+        
+    <script type="module" src="../simulador_consorcio.js"> </script>
+    </body>
+</html>

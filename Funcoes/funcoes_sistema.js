@@ -1,25 +1,18 @@
 
-const identificar_produto = (escolha) => {
 
-    tipoCredito = 'carro'; 
 
-   if (tipoCredito == ('1' || 'carro' || 'Carro')) {
-      tipoCredito = "Carro";
 
-    } else if (tipoCredito == ('2' || 'moto' || 'Moto')) {
-        tipoCredito = "Moto";
-
-    } else if (tipoCredito == ('3' || 'Imóvel' || 'imovel' || 'Imovel')){
-        tipoCredito = "Imóvel";
-    }
-}
 const montar_plano = (empresas, tipoCredito, valorCredito, prazo) => {
+
+    tipoCredito = Number(tipoCredito);
+    valorCredito = Number(valorCredito);
+    prazo = Number(prazo);
 
     const array_planos = []
 
     for (const empresa of empresas) {
 
-        if (tipoCredito == "Carro" && empresa.auto == true){
+        if (tipoCredito == "1" && empresa.auto == true){
            
             let taxa = empresa.taxacarro;
             let valorCalculo = valorCredito
@@ -38,9 +31,9 @@ const montar_plano = (empresas, tipoCredito, valorCredito, prazo) => {
                 Descricao: empresa.descricao
             }
             
-        array_planos.push(plano);
+            array_planos.push(plano);
             
-        } else if (tipoCredito == "Moto" && empresa.moto == true){
+        } else if (tipoCredito == "2" && empresa.moto == true){
             
             let taxa = empresa.taxamoto;
             let valorCalculo = valorCredito
@@ -59,33 +52,37 @@ const montar_plano = (empresas, tipoCredito, valorCredito, prazo) => {
                 Descricao: empresa.descricao
             }
             
-        array_planos.push(plano);
+            array_planos.push(plano);
 
     
-        } else if (tipoCredito == "Imóvel" && empresa.imovel == true){
-        let taxa = empresa.taxaimovel;
-        let valorCalculo = valorCredito
-       
-        let VtotalCredito = valorCalculo += valorCalculo * (taxa / 100)
-        let parcela =  VtotalCredito / prazo;
-            
-        var plano = {
-            Empresa: empresa.nome, 
-            Parcela_R$: parcela, 
-            Valor_do_crédito_R$: valorCredito, 
-            Prazo: prazo,
-            Taxa_Administrativa: (taxa + "%"),
-            Valor_Total_c_taxa: VtotalCredito,
-            Tipo_Crédito: tipoCredito,
-            Descricao: empresa.descricao
-        }
+        } else if (tipoCredito == "3" && empresa.imovel == true){
+            let taxa = empresa.taxaimovel;
+            let valorCalculo = valorCredito
         
-        array_planos.push(plano);
-        }
+            let VtotalCredito = valorCalculo += valorCalculo * (taxa / 100)
+            let parcela =  VtotalCredito / prazo;
+                
+            var plano = {
+                Empresa: empresa.nome, 
+                Parcela_R$: parcela, 
+                Valor_do_crédito_R$: valorCredito, 
+                Prazo: prazo,
+                Taxa_Administrativa: (taxa + "%"),
+                Valor_Total_c_taxa: VtotalCredito,
+                Tipo_Crédito: tipoCredito,
+                Descricao: empresa.descricao
+            }
+            
+            array_planos.push(plano);
+            }
     }
-            //console.log(array_planos)
-            return array_planos
+            
+    console.log(array_planos + "OIIIIIII")
+
+    return array_planos
 }
+
+
 
 const montar_oferta = (planos) => {
    
@@ -137,10 +134,14 @@ const montar_oferta = (planos) => {
                 console.log("\nO plano de " + credito + ", para " + objetivo + ", na empresa " + empresa + " tem: \n" + 
                 "Prazo:" + prazo + " meses\n" + "Parcelas de: " + parcela + " mensais \n" + "Taxa total de: " + taxa_adm + "\n" + "Valor total a pagar: " + valorTotal);
                 console.log ("\n");
-                console.log("A vanagem do plano é: " + descricao);
+                console.log("A vantagem do plano é: " + descricao);
                 console.log ("_______________________________________________________")
         }
     }
+}
+
+const apresentar_oferta = (ofertas) =>{
+
 }
 
 export {montar_plano, montar_oferta};

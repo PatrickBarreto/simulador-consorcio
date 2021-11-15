@@ -25,11 +25,13 @@
             p{
                 color:rgb(53, 53, 53)
             } 
-
-            #area-simulador{
-                display:flex;
-                flex-flow:column;
-                justify-content: space-around;
+            #submit{
+                width: 150px;
+                height: 30px;
+            }
+            #tipo-credito{
+                width: 150px;
+                height: 30px;
             }
     </style>
 </head>
@@ -37,17 +39,22 @@
         <h1>Sistema Simulador de Consórcio</h1>
             <div id="area-simulador">
                 <h3>Simulação:</h3>
-                <select id="tipo-credito">
-                    <option value="1"><b>Carro</b></option>
-                    <option value="2"><b>Moto</b></option>
-                    <option value="3"><b>Imóvel</b></option>
-                </select>
+                <div>
+                    <select id="tipo-credito">
+                        <option value="1"><b>Carro</b></option>
+                        <option value="2"><b>Moto</b></option>
+                        <option value="3"><b>Imóvel</b></option>
+                    </select>
+                </div>
                 
-                <input id="valor-credito">Quanto de crédito?</input>
-            
-                <input id="prazo">Qual prazo ideal?</input>                  
+                <div>
+                    <input id="valor-credito" placeholder="Quanto de crédito?">
+                </div>
+                
+                <div>
+                <input id="prazo" placeholder="Qual prazo ideal?">
+                </div>    
             </div>
-         </div>
 
          <div>
              <button id="submit"> 

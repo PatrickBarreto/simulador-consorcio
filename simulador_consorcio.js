@@ -7,13 +7,18 @@ const valorCredito= document.querySelector("#valor-credito").value
 const prazo= document.querySelector("#prazo").value
 
 const submit = document.querySelector("#submit")
+const retorno = document.querySelector("#retorno")
 /*-----------------------------------------------------------------*/
 
 submit.addEventListener("click", ( )=>{
 
     let planos = montar_plano(empresas, tipoCredito, valorCredito, prazo);
-    montar_oferta(planos);
+    let ofertas = montar_oferta(planos);
+
+
+    console.log(ofertas)
+    retorno.innerText = ofertas
 
 })
 
-
+ 

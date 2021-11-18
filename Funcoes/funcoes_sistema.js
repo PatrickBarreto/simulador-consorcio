@@ -4,10 +4,6 @@
 
 const montar_plano = (empresas, tipoCredito, valorCredito, prazo) => {
 
-    tipoCredito = Number(tipoCredito);
-    valorCredito = Number(valorCredito);
-    prazo = Number(prazo);
-
     const array_planos = []
 
     for (const empresa of empresas) {
@@ -76,8 +72,6 @@ const montar_plano = (empresas, tipoCredito, valorCredito, prazo) => {
             array_planos.push(plano);
             }
     }
-            
-    console.log(array_planos + "OIIIIIII")
 
     return array_planos
 }
@@ -106,7 +100,6 @@ const montar_oferta = (planos) => {
         console.log("A vantagem do plano é: " + descricao)
         console.log ("________________________________________________________")
         console.log ("\n")
-        
 
     //Aproveitando para Localizar qual a menor parcela de todas)
         if (parcela <= menor_parcela) {

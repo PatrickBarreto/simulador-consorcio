@@ -1,0 +1,123 @@
+<!doctype html>
+<html pt-BR>
+<head>
+    <title> Sistema Simulador de Consórcio </title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sistema para simular consórcio de acordo com objetivo e condição do usuário">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/javascript"; src="/desktop/SistemaConsorcio/Funcoes/funcoes_sistema.js">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+            
+            h1 {
+                color:black
+            }
+            h2{
+                color:black
+            }
+            h3{
+                color:black
+            }
+            p{
+                color:rgb(53, 53, 53)
+            } 
+
+            li{
+                margin: 10px;
+            }
+            #area-simulador div{
+                margin: 10px;
+            }
+
+            #submit{
+                width: 150px;
+                height: 30px;
+            }
+            #tipo-credito{
+                width: 150px;
+                height: 30px;
+            }
+            #retorno{
+                display:flex;
+                flex-flow:row wrap;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+
+            #plano{
+                display:flex;
+                flex-flow:row wrap;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 20px;
+                margin: 10px 10px;
+                width: calc(100%/4);
+                border:1px solid gray;
+                border-radius: 10px;
+            }
+
+            #melhor_plano{
+                display:flex;
+                flex-flow:column;
+                justify-content: flex-start;
+                align-items: center;
+                box-shadow: 2px 2px 5px rgb(139, 139, 139);
+                background-color: rgb(244, 244, 244);
+                padding: 20px;
+                margin: 10px 40px;
+                list-style: none;
+                border-radius: 10px;
+            }
+
+            #plano ul, #melhor_plano ul{
+                list-style: none;
+            }
+
+            .dinamico{
+                width: 100%;
+                display: flex;
+                flex-flow:row wrap;
+                justify-content: center;
+                margin: 0px 0px;
+            
+            }
+    </style>
+</head>
+    <body>
+        <h1>Sistema Simulador de Consórcio</h1>
+            <div id="area-simulador">
+                <h3>Simulação:</h3>
+                <div>
+                    <select id="tipo-credito">
+                        <option value="1"><b>Carro</b></option>
+                        <option value="2"><b>Moto</b></option>
+                        <option value="3"><b>Imóvel</b></option>
+                    </select>
+                </div>
+                
+                <div>
+                    <input id="valor-credito" placeholder="Quanto de crédito?">
+                </div>
+                
+                <div>
+                    <input id="prazo" placeholder="Qual prazo ideal?">
+                </div> 
+
+                <div>
+                    <button id="submit"> 
+                        Calcular
+                    </button>
+                </div>
+            </div>
+
+         <div id="retorno">
+            
+         </div>
+        
+    <script type="module" src="../app.js"> </script>
+    </body>
+</html>
